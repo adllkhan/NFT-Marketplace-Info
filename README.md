@@ -17,16 +17,17 @@ add this information to the database and send it to the user.
 
 
 --- P R I M E R ---
-![img.png](img.png)
-![img_1.png](img_1.png)
-![img_2.png](img_2.png)
-![img_3.png](img_3.png)
-![img_4.png](img_4.png)
-![img_5.png](img_5.png)
+![img.png](img/img.png)
+![img_1.png](img/img_1.png)
+![img_2.png](img/img_2.png)
+![img_3.png](img/img_3.png)
+![img_4.png](img/img_4.png)
+![img_5.png](img/img_5.png)
 
 --- E X A M P L E ---
 
 Flow
-![img_6.png](img_6.png)
+![img_6.png](img/img_6.png)
+
 Database
-![img_8.png](img_8.png)
+![img_8.png](img/img_8.png)
