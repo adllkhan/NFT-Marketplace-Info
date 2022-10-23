@@ -48,16 +48,19 @@ with app.app_context():
     db.create_all()
 
 def add(token):
-    db.session.add(token)
+    db.session.add(nft, token)
     db.session.commit()
-
 def get(address):
-    if "DsBSeV1897traChD8egnk3bjHFp9FBrUbhDYRzBxkdAv" == "DsBSeV1897traChD8egnk3bjHFp9FBrUbhDYRzBxkdAv":
-        print(address)
-    if db.session.query(nft).filter_by(mint = address).first() is not None:
+    """if nft.mint is None:
         return db.session.get(nft, address)
     else:
-        return None
+        return None"""
+    if(len(nft.query.filter_by(mint=address).all())) != 0:
+        return nft.query.filter_by(mint=address).all()
+    else:
+        return ""
+
+
 
 
 

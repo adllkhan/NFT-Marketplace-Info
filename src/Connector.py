@@ -20,11 +20,12 @@ def getTokenByRequest(network, address):
     except AttributeError:
         print("bad request")
     finally:
+        database.add(token)
         return token
 
 
-def getTokenByDatabase(network, address):
-    info = [database.get(address).mint,
+def getTokenByDatabase(address):
+    token = database.nft(database.get(address).mint,
             database.get(address).standard,
             database.get(address).name,
             database.get(address).symbol,
@@ -36,10 +37,7 @@ def getTokenByDatabase(network, address):
             database.get(address).metaplex_masterEdition,
             database.get(address).metaplex_owners_address,
             database.get(address).metaplex_owners_verified,
-            database.get(address).metaplex_owners_share]
-
-
-
+            database.get(address).metaplex_owners_share)
 
 """
 network = "mainnet"

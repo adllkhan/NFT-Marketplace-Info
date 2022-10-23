@@ -2,18 +2,16 @@ from flask import Flask, render_template, request
 from src import database, request as r, Connector
 
 app = Flask(__name__)
-info = []
 
 @app.route("/", methods=["GET", "POST"])
 def index():
     token = database.nft
+    address = request.form.get("password")
     if request.method == "POST":
-        address = request.form.get("password")
-        """print(database.get(address))
-        if database.get(address) != None:
-            info = Connector.getTokenByDatabase("mainnet", address)
-        else:"""
-        token = Connector.getTokenByRequest("mainnet", address)
+        if database.get(address) != "":
+            token = Connector.getTokenByDatabase(address)
+        else:
+            token = Connector.getTokenByRequest("mainnet", address)
 
     return render_template("index.html",
         mintl=str(token.mint),
